@@ -1,0 +1,246 @@
+.subscriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  top: 2em;
+}
+
+h3 {
+  color: white;
+}
+
+.imageSection {
+  height: 300px;
+}
+
+.playersImage {
+  position: relative;
+  left: 2em;
+}
+
+.rectangle {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background: #121226;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  z-index: 100;
+  padding: 2.5em 6em 2.5em 6em;
+  position: relative;
+  /* -------------------------------- */
+  transform: translate(41%, 110%);
+  bottom: 16em;
+  /* or   transform: translate(39%, -145%);
+    bottom: 0em;   which one? with minus and 0 bottom or with plus and 16 bottom*/
+}
+
+.rectanglePlus {
+  position: relative;
+  left: 2px;
+}
+
+.headerText {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.subContainer {
+  background-color: white;
+  border-radius: 5px 5px 40px 5px;
+  width: 360px;
+  height: 90px;
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.subsubContainer {
+  position: relative;
+  bottom: 1.3em;
+  width: fit-content;
+  padding-right: 2.5em; /* length of the subscription box! */
+  white-space: nowrap;
+}
+
+.subContainer.active * {
+  color: white;
+}
+
+.yearlyPass,
+.monthlyPass {
+  display: flex;
+  justify-content: end;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  gap: 8em;
+  padding-left: 4em;
+  top: 0.6em;
+  position: relative;
+}
+
+.subContainer.active.yearly,
+.subContainer.active.monthly {
+  background-color: #1985c7;
+  color: white;
+}
+
+.perTime {
+  font-size: 9px;
+  color: #0085ca;
+  align-self: end;
+}
+
+.access {
+  font-size: 11px;
+  color: gray;
+  position: relative;
+  left: 5.8em;
+  width: 50%;
+  word-wrap: break-word;
+  white-space: normal;
+  bottom: 0.9em;
+}
+
+.price {
+  color: #0085ca;
+  font-weight: 800;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 10px;
+}
+
+.circle {
+  height: 20px;
+
+  position: relative;
+  top: 2.1em;
+  left: 1.3em;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  padding: 1px;
+}
+
+.left {
+  margin-bottom: 70px;
+}
+
+.titleContainer {
+  color: white;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 800;
+  word-wrap: break-word;
+}
+
+.mobileTitle {
+  display: block;
+  position: relative;
+  width: 260px;
+  top: 10px;
+  left: 70px;
+}
+.desktopTitle {
+  display: none;
+}
+
+#bestValue {
+  color: #1985c7;
+
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-content: center;
+  width: 78.94px;
+  height: 24.75px;
+  flex-shrink: 0;
+
+  border-radius: 5px;
+  border: 2px solid #1985c7;
+  background: #bcd9ea;
+  position: relative;
+  top: 10px;
+  left: 10px;
+
+  color: #1985c7;
+}
+
+@media (min-width: 860px) {
+  .subscriptionContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    justify-items: center;
+    align-items: center;
+    gap: 50px;
+    
+    /* position: relative;
+    top: 8em; OR */
+
+    height: 100vh;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    grid-area: left;
+    justify-content: center;
+  }
+
+  .mobileTitle {
+    display: none;
+  }
+
+  .desktopTitle {
+    display: block;
+    text-align: center;
+    width: 280px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+    transform: scale(1.3);
+  }
+
+  .rightImage,
+  .rightForm {
+    display: flex;
+    flex-direction: column;
+    grid-area: right;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: inherit;  /* it prevent the movement after clicking the colorFunction */
+  }
+
+  .playersImage {
+    transform: scale(1.5);
+  }
+
+  .rectangle {
+    transform: scale(1.6) translate(25%, 85%);
+  }
+
+  .rightForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .left {
+    padding: 90px;
+  }
+}
